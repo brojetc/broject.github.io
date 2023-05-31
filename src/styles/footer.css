@@ -1,0 +1,25 @@
+/* Footer bar styles */
+/* Basic Footer bar styles */
+.footer {
+  background: rgba(33, 33, 33, 1) !important;
+  min-height: var(--footer-height);
+  max-height: var(--footer-height);
+  justify-content: center;
+}
+
+h6.h10 {
+  color: rgba(255, 255, 255, 1);
+  text-transform: capitalize;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.h10.right {
+  padding-right: 10px;
+  text-align: right;
+}
+
+.h10.left {
+  padding-left: 10px;
+  text-align: left;
+}

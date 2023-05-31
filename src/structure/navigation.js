@@ -1,28 +1,23 @@
 import {
   AppBar,
   Box,
-  IconButton,
   Toolbar,
   Typography,
-  Button,
+  IconButton,
 } from "@mui/material";
 import * as React from "react";
+import logo from "../assets/pics/placeholders/imgPlaceholder.png";
 
 const Navigation = () => (
   <Box sx={{ flexGrow: 1 }}>
-    <AppBar position="static">
+    <AppBar position="static" className="navigation">
       <Toolbar>
-        <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ mr: 2 }}
-        ></IconButton>
-        <Typography variant="h8" component="div" sx={{ flexGrow: 1 }}>
+        <IconButton sx={{ flexGrow: 1 }}>
+        <img src={logo} alt="Brand logo" className="appbar-brand" />
+        <Typography component="h6" className="h8" sx={{ flexGrow: 1 }}>
           brand name placeholder
         </Typography>
-        <Button color="inherit">Login</Button>
+        </IconButton>
       </Toolbar>
     </AppBar>
   </Box>

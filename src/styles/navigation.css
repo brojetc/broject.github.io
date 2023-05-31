@@ -6,20 +6,28 @@
   max-height: var(--navigation-height);
   font-weight: 900;
   font-size: 15;
+  margin: 0;
 }
 /* Navigation bar brand image and text */
-.navbar-brand {
+
+/* Brand name */
+h6.h8 {
   color: rgba(255, 255, 255, 1);
+  font-size: 1.2rem !important;
+  font-weight: 900 !important;
   text-transform: uppercase;
+  text-align: left;
 }
-.navbar-brand:hover {
+
+.appbar-brand:hover {
   color: rgba(255, 255, 255, 1);
   cursor: pointer;
 }
 
-.navbar-brand img {
-  height: 50px;
-  width: 50px;
+img.appbar-brand {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
   padding: 5px;
 }
 /* Navigation bar links */
