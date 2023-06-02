@@ -12,7 +12,8 @@ body {
   background: linear-gradient(
       rgba(0, 0, 0, var(--bg-darker-1)),
       rgba(0, 0, 0, var(--bg-darker-1))
-    ),rgba(65, 65, 65, 1);
+    ),
+    rgba(65, 65, 65, 1);
   background-position: center;
   background-size: cover;
   min-width: 400px;
@@ -24,21 +25,18 @@ body {
   border-left: 1.5px double rgb(155, 155, 155);
   background: rgba(237, 237, 237, 0.05);
   min-height: calc(
-    100vh - var(--navigation-height) - var(--top-height) -
-      var(--bottom-height) - var(--footer-height)
+    100vh - var(--navigation-height) - var(--top-height) - var(--bottom-height) -
+      var(--footer-height)
   );
   max-width: 1920px;
   padding: 0;
 }
 
-#body {
- background-image: linear-gradient(
-      rgba(0, 0, 0, var(--bg-darker-2)),
-      rgba(0, 0, 0, var(--bg-darker-2))
-    ),rgba(237, 237, 237, 1);
-  background-position: center;
-  background-size: cover;
-  width: 100%;
+.body2{
+  display: flex;
+  flex-flow: column nowrap !important;
+  justify-content: center;
+  align-items: center;
 }
 /* Make horizontal line invisible */
 hr.space {
@@ -50,17 +48,14 @@ hr.space {
   border: 0;
   margin: 0;
 }
-
 .row * {
   flex-shrink: 1;
 }
-
 div button {
   padding: 0 !important;
   margin: 0 !important;
 }
-
-.css-hyum1k-MuiToolbar-root{
+.css-hyum1k-MuiToolbar-root {
   padding: 0 !important;
   min-height: auto !important;
 }

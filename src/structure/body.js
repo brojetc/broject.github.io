@@ -8,6 +8,12 @@ import {
 } from "@mui/material";
 import * as React from "react";
 
+/** Load images */
+const images = require.context("../assets/pics/site-banner/", true);
+
+/** Load list of sites from the server
+ *  After load create link cards
+ */
 const Repo = () => {
   let [repo, setRepo] = React.useState(null);
   React.useEffect(() => {
@@ -23,40 +29,38 @@ const Repo = () => {
   );
 };
 
+/** Structure of the link card */
 const RepoCard = (props) => (
-  <Card className="linkcard" onClick={()=> {window.location.href = "broj-ect.github.io/"+props.name}}>
+  <Card
+    className="linkcard"
+    onClick={() => {
+      window.location.href = "https://broj-ect.github.io/" + props.name;
+    }}
+  >
     <CardActionArea>
       <CardMedia
         component="img"
-        height="50"
-        image="../assets/pics/placeholders/imgPlaceholder.png"
-        alt="placeholder"
+        height="75"
+        image={images("./"+props.name+".png")}
+        alt={props.name}
       />
       <CardContent>
-        <Typography variant="h6" className="h5">
-          {props.name}
-        </Typography>
-        <Typography variant="h6" className="h6">
-          Website Website
-        </Typography>
+        <Typography variant="h3">{props.name}</Typography>
       </CardContent>
     </CardActionArea>
   </Card>
 );
 
+/** Structure of the body */
 const Body = () => (
   <Grid container spacing={0}>
     <Grid item sm={1}></Grid>
-    <Grid item xs={12} sm={10}>
-      <div className="body">
-        <Grid container spacing={0}>
-          <Grid item xs={1}></Grid>
-          <Grid item xs={10}>
-            <Repo />
-          </Grid>
-          <Grid item xs={1}></Grid>
-        </Grid>
-      </div>
+    <Grid container item spacing={0} xs={12} sm={10} className="body">
+      <Grid item xs={1}></Grid>
+      <Grid item xs={10} className="body2">
+        <Repo />
+      </Grid>
+      <Grid item xs={1}></Grid>
     </Grid>
     <Grid item sm={1}></Grid>
   </Grid>

@@ -1,6 +1,5 @@
 import {
   AppBar,
-  Box,
   Toolbar,
   Typography,
   IconButton,
@@ -9,7 +8,6 @@ import * as React from "react";
 import logo from "../assets/pics/placeholders/imgPlaceholder.png";
 
 const Navigation = () => (
-  <Box sx={{ flexGrow: 1 }}>
     <AppBar position="static" className="navigation">
       <Toolbar>
         <IconButton sx={{ flexGrow: 1 }}>
@@ -20,7 +18,6 @@ const Navigation = () => (
         </IconButton>
       </Toolbar>
     </AppBar>
-  </Box>
 );
 
 export default Navigation;
