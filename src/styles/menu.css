@@ -1,0 +1,4 @@
+/* Menu styles */
+.menu > .MuiMenu-paper {
+    background-color: rgba(65, 65, 65, 1);
+}

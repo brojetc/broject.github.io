@@ -7,10 +7,44 @@ import {
   Typography,
 } from "@mui/material";
 import * as React from "react";
-
+/** Variables */
 /** Load images */
 const images = require.context("../assets/pics/site-banner/", true);
-
+/** Structure of the link card */
+const RepoCard = (props) => {
+  return (
+    <Card
+      className="linkcard"
+      onClick={() => {
+        window.location.href = "https://broj-ect.github.io/" + props.name;
+      }}
+      onAuxClick={(event) => {
+        if (event.button === 0) {
+          window.open("https://broj-ect.github.io/" + props.name, "_self");
+        } else if (event.button === 1) {
+          window.open("https://broj-ect.github.io/" + props.name, "_blank");
+        }
+      }}
+    >
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="75"
+          image={images("./" + props.name + ".png")}
+          alt={props.name}
+        />
+        <CardContent>
+          <Typography variant="h3" className="h1">
+            {props.fullName}
+          </Typography>
+          <Typography variant="h3" className="h2">
+            {props.desc}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  );
+};
 /** Load list of sites from the server
  *  After load create link cards
  */
@@ -24,46 +58,36 @@ const Repo = () => {
   return (
     <>
       {repo &&
-        repo.map((item, i) => <RepoCard key={item + i} name={item.name} />)}
+        repo.map((item, i) => (
+          <React.Fragment key={"frag" + i}>
+            <hr className="space" key={"hr-" + i} />
+            <RepoCard
+              key={item.name + i}
+              name={item.name}
+              fullName={item.fullName}
+              desc={item.desc}
+            />
+          </React.Fragment>
+        ))}
+      <hr className="space" />
     </>
   );
 };
-
-/** Structure of the link card */
-const RepoCard = (props) => (
-  <Card
-    className="linkcard"
-    onClick={() => {
-      window.location.href = "https://broj-ect.github.io/" + props.name;
-    }}
-  >
-    <CardActionArea>
-      <CardMedia
-        component="img"
-        height="75"
-        image={images("./"+props.name+".png")}
-        alt={props.name}
-      />
-      <CardContent>
-        <Typography variant="h3">{props.name}</Typography>
-      </CardContent>
-    </CardActionArea>
-  </Card>
-);
-
 /** Structure of the body */
-const Body = () => (
-  <Grid container spacing={0}>
-    <Grid item sm={1}></Grid>
-    <Grid container item spacing={0} xs={12} sm={10} className="body">
-      <Grid item xs={1}></Grid>
-      <Grid item xs={10} className="body2">
-        <Repo />
+const Body = () => {
+  return (
+    <Grid container spacing={0}>
+      <Grid item md={1}></Grid>
+      <Grid container item spacing={0} xs={12} md={10} className="upperBody">
+        <Grid item xs={1}></Grid>
+        <Grid item xs={10} className="body">
+          <Repo />
+        </Grid>
+        <Grid item xs={1}></Grid>
       </Grid>
-      <Grid item xs={1}></Grid>
+      <Grid item md={1}></Grid>
     </Grid>
-    <Grid item sm={1}></Grid>
-  </Grid>
-);
-
+  );
+};
+/** */
 export default Body;

@@ -7,6 +7,11 @@
   --bg-darker-2: 0.9;
   --top-height: 0px;
 }
+/* Root defaults */
+.css-hyum1k-MuiToolbar-root {
+  padding: 0 !important;
+  min-height: auto !important;
+}
 /* Body element */
 body {
   background: linear-gradient(
@@ -20,7 +25,7 @@ body {
   margin: 0;
 }
 /* Content area */
-.body {
+.upperBody {
   border-right: 1.5px double rgb(155, 155, 155);
   border-left: 1.5px double rgb(155, 155, 155);
   background: rgba(237, 237, 237, 0.05);
@@ -31,31 +36,20 @@ body {
   max-width: 1920px;
   padding: 0;
 }
-
-.body2{
+.body{
   display: flex;
   flex-flow: column nowrap !important;
   justify-content: center;
   align-items: center;
 }
+/* Horizontal line styles */
 /* Make horizontal line invisible */
 hr.space {
   opacity: 0;
 }
-/* Row */
-.row {
-  padding: 0;
-  border: 0;
+/* Make horizontal line as appbar link mediator */
+hr.mediator {
+  width: 100%;
+  opacity: 0;
   margin: 0;
-}
-.row * {
-  flex-shrink: 1;
-}
-div button {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-.css-hyum1k-MuiToolbar-root {
-  padding: 0 !important;
-  min-height: auto !important;
 }

@@ -1,28 +1,42 @@
-/* Headings: 1 - 7 */
-/* Main heading */
+/* Headings: 1 - 6 */
+/* H1: Main*/
 h1 {
   border-bottom: 2px double rgba(171, 150, 111, 1);
   border-top: 2px double rgba(171, 150, 111, 1);
   color: rgba(255, 255, 255, 1);
-  text-transform: uppercase;
   text-align: center;
-  font-size: 2rem;
   font-weight: bold;
 }
-/* Secondary heading */
+/* Brand name */
+h1.h1 {
+  font-size: 1.2rem !important;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  text-align: left;
+  border: none;
+}
+/* Heading */
+h1.h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+/* H2: Secondary */
 h2 {
   border-bottom: 2px double rgba(171, 150, 111, 1);
   border-top: 2px double rgba(171, 150, 111, 1);
   color: rgba(255, 255, 255, 1);
-  text-transform: uppercase;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
   padding-left: 2.5rem !important;
-  font-size: 1.5rem;
   font-weight: bold;
   text-align: left;
 }
-/* Card heading */
+/* Heading */
+h2.h1 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+/* H3: Card */
 h3 {
   border-bottom: 2.5px ridge rgba(182, 149, 87, 0.5);
   border-top: 5px ridge rgba(182, 149, 87, 0.5);
@@ -30,58 +44,78 @@ h3 {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
   text-align: center;
-  font-size: 1.25rem;
   font-weight: bold;
 }
-
-h3 a {
-  color: rgba(255, 255, 255, 1);
-  text-decoration: none;
-  cursor: pointer;
+/* Heading */
+h3.h1 {
+  text-transform: capitalize;
+  font-size: 1.25rem;
 }
-/* Link text: navigation and footer bars */
-h4 {
-  color: rgba(255, 255, 255, 1);
+/* Description */
+h3.h2 {
   font-size: 1rem;
 }
-h4 a {
-  text-decoration: none;
-  cursor: pointer;
+/* H4: Link text */
+h4 {
+  color: rgba(255, 255, 255, 1);
 }
-/* Carousel heading */
+/* Navigation and footer bars */
+h4.h1 {
+  color: rgba(133, 133, 133, 1);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  align-self: center;
+  text-align: center;
+  font-weight: 900;
+  cursor: pointer;
+  margin: 0 15px;
+}
+h4.h1:hover {
+  color: rgba(255, 255, 255, 1);
+}
+h4.h1.active {
+  border-right: 5px double rgb(171, 150, 111);
+  border-left: 5px double rgb(171, 150, 111);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 100%;
+}
+h4.h1.left {
+  padding-right: 10px;
+  text-align: left;
+}
+h4.h1.right {
+  padding-right: 10px;
+  text-align: right;
+}
+/* Scroll Top */
+h4.h2 {
+  color: rgba(31, 31, 31, 0.75);
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+/* H5: Carousel */
 h5 {
   border: 5px double rgba(171, 150, 111, 1);
   color: rgba(255, 255, 255, 1);
   border-bottom-width: 0px;
   border-top-width: 0px;
   text-align: center;
-  font-size: 2rem;
   font-weight: bold;
   margin: 0;
 }
-/* Link text: other */
-/* Link text: link */
-h6 {
+/* Heading */
+h5.h1 {
+  font-size: 2rem;
+}
+/**/
+/**/
+h6.h1 {
   color: rgba(255, 255, 255, 1);
   text-align: center;
   font-size: 1rem;
   font-weight: bold;
 }
-h6 a {
-  text-decoration: none;
-  cursor: pointer;
-}
-/* Link text: other hover */
-h6 a:hover {
-  text-decoration: underline solid rgba(171, 150, 111, 1);
-  color: rgba(171, 150, 111, 1);
-}
-/* link text: other if inside carousel */
-.carousel-inner h6 {
-  border: 5px double rgba(171, 150, 111, 1);
-  border-top-width: 0;
-  margin: 0;
-}
+/**/
 /**/
 h6.h7 {
   color: rgba(255, 255, 255, 1);
@@ -89,7 +123,7 @@ h6.h7 {
   font-size: 1rem;
   font-weight: bold;
 }
-
+/**/
 /**/
 h6.h9 {
   color: rgba(255, 255, 255, 1);
@@ -97,7 +131,7 @@ h6.h9 {
   font-weight: 900 !important;
   font-size: 1.2rem !important;
 }
-
+/**/
 /**/
 h6.h10 {
   color: rgba(255, 255, 255, 1);
@@ -105,7 +139,6 @@ h6.h10 {
   font-weight: 900 !important;
   font-size: 1.2rem !important;
 }
-
 /* Other text: paragraphs etc*/
 /* Paragraph */
 p {
@@ -114,6 +147,7 @@ p {
   font-size: 1rem;
   font-weight: bold;
 }
+/**/
 /* Label */
 label {
   color: rgba(31, 31, 31, 0.75);
