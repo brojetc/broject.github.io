@@ -63,7 +63,7 @@ const Repo = () => {
             <RepoCard
               key={item.name + i}
               name={item.name}
-              fullName={item.fullName}
+              fullname={item.fullname}
               desc={item.desc}
             />
           </React.Fragment>
