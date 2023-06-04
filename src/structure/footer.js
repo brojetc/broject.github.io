@@ -9,7 +9,7 @@ const right = ["right"];
 const Footer = () => {
   return (
     <AppBar position="static" className="footer">
-      <Toolbar>
+      <Toolbar className="footer">
         {left.map((item, i) => (
           <Typography
             key={item + i}
