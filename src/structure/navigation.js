@@ -7,25 +7,36 @@ import {
   Menu,
   MenuItem,
   Divider,
+  Dialog,
+  DialogContent,
 } from "@mui/material";
 import * as React from "react";
 import logo from "../assets/pics/placeholders/imgPlaceholder.png";
 /** Variables */
+const images = require.context("../assets/pics/site-banner/", true);
 const brandname = "brand name placeholder";
 const left = ["Home", "Second", "Third"];
-const right = ["Login", "Logout"];
+const right = [];
 /** */
 const Navigation = () => {
   const [menu, setMenu] = React.useState(null);
+  const [dialog, setDialog] = React.useState(false);
   const open = Boolean(menu);
-  const handleClick = (event) => {
+  const handleClickMenu = (event) => {
     setMenu(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClickDialog = (event) => {
+    setDialog(true);
+  };
+  const handleCloseMenu = () => {
     setMenu(null);
+  };
+  const handleCloseDialog = () => {
+    setDialog(false);
   };
   return (
     <AppBar position="static" className="navigation">
+      {/** Links when window width > 900px */}
       <Toolbar
         sx={{ display: { xs: "none", md: "flex" } }}
         className="navigation"
@@ -51,7 +62,30 @@ const Navigation = () => {
             </Typography>
           </Button>
         ))}
+        <Button onClick={handleClickDialog}>
+          <Typography variant="h4" className="h1">
+            Dialog
+          </Typography>
+        </Button>
+        <Dialog open={dialog} onClose={handleCloseDialog} className="dialog">
+          <DialogContent className="bigpic">
+            <img src={images("./re2.png")} alt="bigboi" id="dialogpic" />
+          </DialogContent>
+          <DialogContent className="smallpic">
+            {images.keys().map((item, i) => (
+              <img
+                key={item + i}
+                src={images(item)}
+                alt={item}
+                onClick={() => {
+                  document.getElementById("dialogpic").src = images(item);
+                }}
+              />
+            ))}
+          </DialogContent>
+        </Dialog>
       </Toolbar>
+      {/** Menu when window width < 900px */}
       <Toolbar
         sx={{ display: { xs: "flex", md: "none" } }}
         className="navigation"
@@ -68,7 +102,7 @@ const Navigation = () => {
           aria-controls={open ? "menu" : undefined}
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
-          onClick={handleClick}
+          onClick={handleClickMenu}
         >
           <Typography variant="h4" className="h1">
             menu
@@ -79,7 +113,7 @@ const Navigation = () => {
           className="menu"
           anchorEl={menu}
           open={open}
-          onClose={handleClose}
+          onClose={handleCloseMenu}
           MenuListProps={{ "aria-labelledby": "basic-button" }}
         >
           {left.map((link, i) => (
@@ -97,6 +131,11 @@ const Navigation = () => {
               </Typography>
             </MenuItem>
           ))}
+          <Button onClick={handleClickDialog}>
+            <Typography variant="h4" className="h1">
+              Dialog
+            </Typography>
+          </Button>
         </Menu>
       </Toolbar>
     </AppBar>

@@ -10,18 +10,17 @@ import * as React from "react";
 /** Variables */
 /** Load images */
 const images = require.context("../assets/pics/site-banner/", true);
+console.log(images.keys()); /*['./re2.png', './re3.png',...*/
 /** Structure of the link card */
 const RepoCard = (props) => {
   return (
     <Card
       className="linkcard"
       onClick={() => {
-        window.location.href = "https://broj-ect.github.io/" + props.name;
+        window.open("https://broj-ect.github.io/" + props.name, "_self");
       }}
       onAuxClick={(event) => {
-        if (event.button === 0) {
-          window.open("https://broj-ect.github.io/" + props.name, "_self");
-        } else if (event.button === 1) {
+        if (event.button === 1) {
           window.open("https://broj-ect.github.io/" + props.name, "_blank");
         }
       }}

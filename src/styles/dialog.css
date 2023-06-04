@@ -1,0 +1,39 @@
+/* Dialog styles */
+.dialog > .MuiDialog-container > .MuiDialog-paper {
+    border: 2px double rgba(171, 150, 111, 1);
+    background-color: rgba(65, 65, 65, 1);
+    max-height: auto !important;
+    max-width: 73vw !important;
+    padding: 1em;
+}
+.dialog .bigpic {
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    display: flex;
+    padding: 0 0 1em 0;
+}
+.dialog .bigpic img {
+    border: 2px double rgba(171, 150, 111, 1);
+    justify-content: center;
+    object-fit: contain;
+    width: 69vw;
+}
+.dialog .smallpic {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    padding: 0;
+}
+.dialog .smallpic img {
+    border: 2px double rgba(171, 150, 111, 1);
+    margin: 0 0.2em;
+    width: 6vw;
+}
+.dialog .smallpic img:hover {
+    border: 2px double rgba(171, 150, 111, 1);
+    margin: 0 0.2em;
+    cursor: pointer;
+    width: 10vw;
+}
