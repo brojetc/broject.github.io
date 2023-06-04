@@ -10,7 +10,6 @@ import * as React from "react";
 /** Variables */
 /** Load images */
 const images = require.context("../assets/pics/site-banner/", true);
-console.log(images.keys()); /*['./re2.png', './re3.png',...*/
 /** Structure of the link card */
 const RepoCard = (props) => {
   return (
