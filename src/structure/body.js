@@ -34,7 +34,7 @@ const RepoCard = (props) => {
         />
         <CardContent>
           <Typography variant="h3" className="h1">
-            {props.fullName}
+            {props.fullname}
           </Typography>
           <Typography variant="h3" className="h2">
             {props.desc}
