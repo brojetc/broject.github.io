@@ -20,20 +20,24 @@ const right = [];
 /** */
 const Navigation = () => {
   const [menu, setMenu] = React.useState(null);
-  const [dialog, setDialog] = React.useState(false);
   const open = Boolean(menu);
   const handleClickMenu = (event) => {
     setMenu(event.currentTarget);
   };
-  const handleClickDialog = (event) => {
-    setDialog(true);
-  };
   const handleCloseMenu = () => {
     setMenu(null);
   };
+  /** */
+  const [dialog, setDialog] = React.useState(false);
+  /** */
+  const handleOpenDialog = (event) => {
+    setDialog(true);
+  };
+  /** */
   const handleCloseDialog = () => {
     setDialog(false);
   };
+  /** */
   return (
     <AppBar position="static" className="navigation">
       {/** Links when window width > 900px */}
@@ -62,15 +66,14 @@ const Navigation = () => {
             </Typography>
           </Button>
         ))}
-        <Button onClick={handleClickDialog}>
+        <Button onClick={handleOpenDialog}>
           <Typography variant="h4" className="h1">
             Dialog
           </Typography>
         </Button>
-        <Dialog open={dialog} onClose={handleCloseDialog} className="dialog">
-          <DialogContent className="bigpic">
-            <img src={images("./re2.png")} alt="bigboi" id="dialogpic" />
-          </DialogContent>
+        <Dialog open={dialog} onClose={handleCloseDialog} className="picdialog">
+          <DialogContent className="bigpic"></DialogContent>
+          <img src={images(images.keys()[0])} alt="bigboi" id="dialogpic" />
           <DialogContent className="smallpic">
             {images.keys().map((item, i) => (
               <img
@@ -131,7 +134,7 @@ const Navigation = () => {
               </Typography>
             </MenuItem>
           ))}
-          <Button onClick={handleClickDialog}>
+          <Button onClick={handleOpenDialog}>
             <Typography variant="h4" className="h1">
               Dialog
             </Typography>

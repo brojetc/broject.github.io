@@ -1,25 +1,25 @@
 /* Dialog styles */
-.dialog > .MuiDialog-container > .MuiDialog-paper {
+.picdialog > .MuiDialog-container > .MuiDialog-paper {
     border: 2px double rgba(171, 150, 111, 1);
     background-color: rgba(65, 65, 65, 1);
     max-height: auto !important;
     max-width: 73vw !important;
     padding: 1em;
 }
-.dialog .bigpic {
+.picdialog .bigpic {
     justify-content: center;
     align-items: center;
     padding: 0 0 1em 0;
     overflow: hidden;
     display: flex;
 }
-.dialog .bigpic img {
+.picdialog .bigpic img {
     border: 2px double rgba(171, 150, 111, 1);
     justify-content: center;
     object-fit: contain;
     width: 69vw;
 }
-.dialog .smallpic {
+.picdialog .smallpic {
     justify-content: center;
     align-items: center;
     flex-direction: row;
@@ -28,13 +28,13 @@
     height: 6vw;
     padding: 0;
 }
-.dialog .smallpic img {
+.picdialog .smallpic img {
     border: 2px double rgba(171, 150, 111, 1);
     object-fit: contain;
     margin: 0 0.2em;
     width: 6vw;
 }
-.dialog .smallpic img:hover {
+.picdialog .smallpic img:hover {
     border: 2px double rgba(171, 150, 111, 1);
     margin: 0 0.2em;
     cursor: pointer;
