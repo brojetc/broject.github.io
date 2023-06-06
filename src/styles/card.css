@@ -4,3 +4,13 @@
   background: rgb(85, 85, 85) !important;
   width: 100%;
 }
+/* Picture card styles */
+.piccard {
+  background: rgb(85, 85, 85) !important;
+  width: 25vmin;
+  height: 25vmin;
+}
+.piccard img {
+  height: 1%;
+  width: auto;
+}

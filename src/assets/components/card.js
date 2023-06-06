@@ -6,6 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import * as React from "react";
+import {BigPic/**, Dia*/} from "./dialog";
 /** Variables */
 /** Load images */
 const images = require.context("../pics/site-banner/", true);
@@ -70,5 +71,52 @@ const Repo = () => {
     </>
   );
 };
+/** Variables */
+/** Load images */
+const images2 = require.context("../pics/re2/", true);
 /** */
-export default Repo;
+const PicCard = (props) => {
+  return (
+    <Card
+      className="piccard"
+      onClick={(e) => {
+        props.setDia(true);
+        props.setPicsrc(images2(props.name));
+      }}
+    >
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          image={images2(props.name)}
+          alt={props.name}
+        />
+        <CardContent>
+          <Typography variant="h3" className="h1">
+            {props.name}
+          </Typography>
+          <Typography variant="h3" className="h2">
+            Another textfield
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  );
+};
+/** */
+const Pic = () => {
+  /** Variables */
+  const [dia, setDia] = React.useState(false);
+  const [picsrc, setPicsrc] = React.useState(images2(images2.keys()[0]));
+  return (
+    <>
+      <BigPic dia={dia} setDia={setDia} picsrc={picsrc} images={images2}/>
+      {images2.keys().map((item, i) => (
+        <React.Fragment key={"frag" + i}>
+          <hr className="space" key={"hr-" + i} />
+          <PicCard key={item.name + i} name={item} setDia={setDia} setPicsrc={setPicsrc} />
+        </React.Fragment>
+      ))}
+    </>
+  );
+};
+export { Repo, Pic };
